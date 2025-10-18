@@ -1,0 +1,32 @@
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe.config
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.pdb
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.AssemblyReference.cache
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Form1.resources
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Properties.Resources.resources
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.GenerateResource.cache
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.CoreCompileInputs.cache
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.exe
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.pdb
+C:\Users\banel\source\repos\not-a-cowboy\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.exe.config
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.AssemblyReference.cache
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Form1.resources
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Properties.Resources.resources
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.GenerateResource.cache
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.CoreCompileInputs.cache
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.exe
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.pdb
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe.config
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe
+C:\Users\moodk\Source\Repos\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.pdb
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe.config
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.exe
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\bin\Debug\hero_adventure.pdb
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.AssemblyReference.cache
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.exe.config
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Form1.resources
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.Properties.Resources.resources
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.GenerateResource.cache
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.csproj.CoreCompileInputs.cache
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.exe
+C:\Users\daiya\OneDrive\Documents\IIE VEGA GAME DESIGN & DEV\hero_adventure_p2\hero_adventure\obj\Debug\hero_adventure.pdb
