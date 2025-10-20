@@ -55,6 +55,21 @@ namespace hero_adventure
         public void UpdateDisplay() // updates the display with the current game state
         {
             lblDisplay.Text = engine.ToString();
+
+            if (engine.CurrentLevel.Hero != null) //this will display the heroes coordinates to the player. this code was initially used to help us debug the herotile when the hero tile was being placed yet not displayed on the level. then we decided that we like this feature
+            {
+                lblHeroCoords.Text = $"Hero Position: ({engine.CurrentLevel.Hero.Position.X}, {engine.CurrentLevel.Hero.Position.Y})";
+                lblHeroCoords.ForeColor = Color.Green; //makes heroes position stats display in green text
+            }
+            else
+            {
+                lblHeroCoords.Text = "Hero not found";
+                lblHeroCoords.ForeColor = Color.Red;
+            }
+            lblLevelSize.Text = $"Level Size: ({engine.CurrentLevel.Width} x {engine.CurrentLevel.Height})"; //displays the width and height dimensions of each level
+
+            //to achieve our game displaying position coordinates, we declared properties that expose our GameEngines CurrentLevel field as well as our Positions x and y coordinates
+
         }
 
         private void Form1_Load(object sender, EventArgs e) // form load event
@@ -101,9 +116,31 @@ namespace hero_adventure
 
 
           UpdateDisplay();
+            if (e.KeyCode == Keys.W)
+            {
+                lblMovement.Text = $"Hero is moving: Up";
+            }
+            else if (e.KeyCode == Keys.A)
+            {
+                lblMovement.Text = $"Hero is moving: Left";
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                lblMovement.Text = $"Hero is moving: Down";
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                lblMovement.Text = $"Hero is moving: Right";
+            }
+
         }
 
         private void lblDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLevelSize_Click(object sender, EventArgs e)
         {
 
         }
