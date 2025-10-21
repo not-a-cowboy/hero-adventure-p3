@@ -97,10 +97,19 @@ namespace hero_adventure
 
             if (targetTile is ExitTile)
             {
+                
+                currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] =
+                    new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));
+
+                currentLevel.Hero.Position.X = targetX;
+                currentLevel.Hero.Position.Y = targetY;
+                currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;
+
+                
                 if (currentLevelNumber == numLevels)
                 {
                     gameState = GameState.Complete;
-                    return false;
+                    return true; 
                 }
                 else
                 {
@@ -109,7 +118,8 @@ namespace hero_adventure
                 }
             }
 
-            
+
+
 
             if (targetTile is PickupTile pickUp) //4.3
             {

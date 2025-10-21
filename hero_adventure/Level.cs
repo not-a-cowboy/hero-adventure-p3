@@ -144,7 +144,7 @@ public class Level
 
         // Place exit
         Position exitPos = GetRandomEmptyPosition();
-        this.exit = (ExitTile)CreateTile(TileType.Exit, exitPos);
+        exit = (ExitTile)CreateTile(TileType.Exit, exitPos);
 
 
         for (int i = 0; i < this.enemy.Length; i++)
