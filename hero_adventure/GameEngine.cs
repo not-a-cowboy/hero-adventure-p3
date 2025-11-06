@@ -156,8 +156,7 @@ namespace hero_adventure
                 if(successfulHeroMoves % 2 == 0) 
                 { 
                     MovesEnemies(); 
-                }
-                
+                } 
                 currentLevel.Hero.UpdateVision(CurrentLevel);
 
                 return true;
@@ -183,7 +182,7 @@ namespace hero_adventure
                 if (enemy == null || enemy.IsDead)
                     continue;
 
-                if (enemy.GetMove(out Tile targetTile) && targetTile != null)
+                if (enemy.GetMove(currentLevel, out Tile targetTile) && targetTile != null)
                 {
                     currentLevel.SwapTiles(enemy, targetTile);
                     currentLevel.UpdateVision();

@@ -25,20 +25,14 @@ namespace hero_adventure
         }
 
 
-        public override bool GetMove(out Tile target)
-        {
-            target = null;
-            return false;
-        }
-
-        public bool GetMove(Level level, out Tile target)
+        public override bool GetMove(Level level, out Tile target)
         {
             Random random = new Random();
             List<Tile> moves = new List<Tile>();
 
             this.UpdateVision(level);
 
-            foreach (Tile tile in this.GetVision())
+            foreach (Tile tile in this.plyr_vision)
             {
                 if (tile is EmptyTile)
                 {
@@ -60,7 +54,7 @@ namespace hero_adventure
         {
             List<CharacterTile> targets = new List<CharacterTile>();
 
-            foreach (Tile tile in this.GetVision())
+            foreach (Tile tile in this.plyr_vision)
             {
                 if (tile is HeroTile hero)
                 {
@@ -76,7 +70,7 @@ namespace hero_adventure
             List<CharacterTile> targets = new List<CharacterTile>();
             this.UpdateVision(level);
 
-            foreach (Tile tile in this.GetVision()) // Use the new accessor
+            foreach (Tile tile in this.plyr_vision) // Use the new accessor
             {
                 if (tile is HeroTile hero)
                 {
@@ -87,11 +81,11 @@ namespace hero_adventure
         }
 
 
-        protected Tile[] GetVision()
+        /*protected Tile[] GetVision()
         {
             return (Tile[])typeof(CharacterTile)
                 .GetField("plyr_vision", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
                 .GetValue(this);
-        }
+        }*/
     }
 }

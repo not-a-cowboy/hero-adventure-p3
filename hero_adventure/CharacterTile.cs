@@ -12,7 +12,7 @@ namespace hero_adventure
         private int hit_points; 
         private int max_hit_pts;
         private int attack_pwr;
-        private Tile[] plyr_vision;
+        protected Tile[] plyr_vision;
 
 
         public int HitPoints
