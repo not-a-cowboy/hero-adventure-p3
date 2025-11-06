@@ -67,55 +67,58 @@ namespace hero_adventure
             {
                 return false;
             }
+
             HeroTile hero = currentLevel.Hero;
             currentLevel.Hero.UpdateVision(currentLevel);
-
-            int deltaX = 0, deltaY = 0;
+            int targetX = hero.Position.X, targetY = hero.Position.Y;
 
             switch (direction)
             {
                 case Direction.Up:
-                    deltaY = -1;
+                    targetY--;
                     break;
                 case Direction.Right:
-                    deltaX = 1;
+                    targetX++;
                     break;
                 case Direction.Down:
-                    deltaY = 1;
+                    targetY++;
                     break;
                 case Direction.Left:
-                    deltaX = -1;
+                    targetX--;
                     break;
                 default:
                     return false;
             }
 
-            int targetX = currentLevel.Hero.Position.X + deltaX;
-            int targetY = currentLevel.Hero.Position.Y + deltaY;
+            /*int targetX = currentLevel.Hero.Position.X + deltaX;
+            int targetY = currentLevel.Hero.Position.Y + deltaY;*/
 
             Tile targetTile = currentLevel.Tiles[targetX, targetY];
 
             if (targetTile is ExitTile)
             {
-                
-                currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] =
-                    new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));
 
-                currentLevel.Hero.Position.X = targetX;
+                /* currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] =
+                     new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));*/
+
+                currentLevel.MoveHeroTo(hero, targetTile.Position);
+
+                /*currentLevel.Hero.Position.X = targetX;
                 currentLevel.Hero.Position.Y = targetY;
-                currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;
+                currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;*/
 
                 
                 if (currentLevelNumber == numLevels)
                 {
                     gameState = GameState.Complete;
-                    return true; 
+                    //return true; 
                 }
                 else
                 {
                     NextLevel();
-                    return true;
+                    //return true;
                 }
+                return true;
             }
 
 
@@ -129,19 +132,32 @@ namespace hero_adventure
 
                 currentLevel.MoveHeroTo(hero, targetTile.Position);
 
+                successfulHeroMoves++;
+                if (successfulHeroMoves % 2 == 0)
+                {
+                    MovesEnemies();
+                }
+
+
                 currentLevel.Hero.UpdateVision(currentLevel);
                 return true;
             }
 
             if (targetTile is EmptyTile)
             {
-                currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] = new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));
-
-                currentLevel.Hero.Position.X = targetX;
+                //currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] = new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));
+                /*currentLevel.Hero.Position.X = targetX;
                 currentLevel.Hero.Position.Y = targetY;
 
-                currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;
+                currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;*/
+                currentLevel.MoveHeroTo(hero, targetTile.Position);
 
+                successfulHeroMoves++;
+                if(successfulHeroMoves % 2 == 0) 
+                { 
+                    MovesEnemies(); 
+                }
+                
                 currentLevel.Hero.UpdateVision(CurrentLevel);
 
                 return true;

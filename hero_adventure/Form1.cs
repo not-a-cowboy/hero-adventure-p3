@@ -83,16 +83,20 @@ namespace hero_adventure
             switch (e.KeyCode)
             {
                 case Keys.W:
-                    engine.TriggerMovement(GameEngine.Direction.Up);
+                    //engine.TriggerMovement(GameEngine.Direction.Up);
+                    engine.MoveHero(GameEngine.Direction.Up);
                     break;
                 case Keys.A:
-                    engine.TriggerMovement(GameEngine.Direction.Left);
+                    //engine.TriggerMovement(GameEngine.Direction.Left);
+                    engine.MoveHero(GameEngine.Direction.Left);
                     break;
                 case Keys.S:
-                    engine.TriggerMovement(GameEngine.Direction.Down);
+                    //engine.TriggerMovement(GameEngine.Direction.Down);
+                    engine.MoveHero(GameEngine.Direction.Down);
                     break;
                 case Keys.D:
-                    engine.TriggerMovement(GameEngine.Direction.Right);
+                    //engine.TriggerMovement(GameEngine.Direction.Right);
+                    engine.MoveHero(GameEngine.Direction.Right);
                     break;
 
             }
