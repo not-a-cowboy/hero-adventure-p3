@@ -43,7 +43,7 @@ namespace hero_adventure
             this.hit_points = 40;
             this.max_hit_pts = 40;
             this.attack_pwr = 5;
-            this.plyr_vision = new Tile[5]; // placeholder for vision array
+            this.plyr_vision = new Tile[4]; // placeholder for vision array
         }
         public abstract override char Display { get; } //character visionTiles display
 
@@ -53,9 +53,9 @@ namespace hero_adventure
             int x = this.X;
             int y = this.Y;
 
-            // Ensure plyr_vision has 5 elements
-            if (plyr_vision == null || plyr_vision.Length != 5)
-                plyr_vision = new Tile[5];
+            
+            if (plyr_vision == null || plyr_vision.Length != 4)
+                plyr_vision = new Tile[4];
 
             // 0 = Up
             plyr_vision[0] = (y - 1 >= 0) ? level.Tiles[x, y - 1] : null;
@@ -65,9 +65,8 @@ namespace hero_adventure
             plyr_vision[2] = (y + 1 < level.Height) ? level.Tiles[x, y + 1] : null;
             // 3 = Left
             plyr_vision[3] = (x - 1 >= 0) ? level.Tiles[x - 1, y] : null;
-            // 4 = Current
-            plyr_vision[4] = level.Tiles[x, y];
-
+           
+          
         }
 
         public void Heal(int amount)

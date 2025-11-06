@@ -175,20 +175,29 @@ namespace hero_adventure
 
 
         
-        public void MovesEnemies()
+       
+           public void MovesEnemies()
         {
-            foreach (EnemyTIle enemy in currentLevel.Enemy)
+            //  saves the existing enemies before moving them
+            var enemiesToMove = currentLevel.Enemy
+                .Where(e => e != null && !e.IsDead)
+                .ToArray();
+
+            foreach (EnemyTIle enemy in enemiesToMove)
             {
-                if (enemy == null || enemy.IsDead)
-                    continue;
+                
+                enemy.UpdateVision(currentLevel);
 
-                if (enemy.GetMove(currentLevel, out Tile targetTile) && targetTile != null)
+                // tells the enemy where to move
+                if (enemy.GetMove(currentLevel, out Tile targetTile) && targetTile is EmptyTile)
                 {
+                    // Moves the existing enemy, not a new one
                     currentLevel.SwapTiles(enemy, targetTile);
-                    currentLevel.UpdateVision();
                 }
-
             }
+
+            // Update the vision once all moves are done
+            currentLevel.UpdateVision();
         }
 
         private void LoadNewLevel()// allows a new lvl to load 

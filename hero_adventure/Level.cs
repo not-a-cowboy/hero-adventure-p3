@@ -219,23 +219,20 @@ public class Level
 
 
     public void SwapTiles(Tile t1, Tile t2)
-    { // swaps two tiles within the level
+    {
         if (t1 == null || t2 == null)
-        {
             return;
-        }
-
-
-        // Swap inside the 2D array
 
         Position pos1 = t1.Position;
         Position pos2 = t2.Position;
 
-        //swap positions
+        // Swaps them in the tiles array
         tiles[pos1.X, pos1.Y] = t2;
         tiles[pos2.X, pos2.Y] = t1;
 
-
+        // Update their stored positions
+        t1.Position = pos2;
+        t2.Position = pos1;
     }
 
     public void UpdateVision()

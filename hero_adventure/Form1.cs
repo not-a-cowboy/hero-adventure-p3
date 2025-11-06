@@ -101,15 +101,15 @@ namespace hero_adventure
 
             }
             // attack controls
-            if (e.KeyCode == Keys.I)
+            if (e.KeyCode == Keys.J)
                 engine.TriggerAttack(GameEngine.Direction.Left);
             else
             {
-                if (e.KeyCode == Keys.K)
+                if (e.KeyCode == Keys.L)
                     engine.TriggerAttack(GameEngine.Direction.Right);
-                else if (e.KeyCode == Keys.J)
+                else if (e.KeyCode == Keys.I)
                     engine.TriggerAttack(GameEngine.Direction.Up);
-                else if (e.KeyCode == Keys.L)
+                else if (e.KeyCode == Keys.K)
                     engine.TriggerAttack(GameEngine.Direction.Down);
             }
         

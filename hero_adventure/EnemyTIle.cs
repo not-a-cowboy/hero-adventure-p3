@@ -19,5 +19,6 @@ namespace hero_adventure
 
         public abstract bool GetMove(Level level, out Tile tile);
         public abstract CharacterTile[] GetTarget();
+
     }
 }

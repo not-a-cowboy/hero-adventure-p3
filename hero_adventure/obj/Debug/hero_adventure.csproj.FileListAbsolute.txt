@@ -52,3 +52,13 @@ C:\Users\banel\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adve
 C:\Users\banel\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.csproj.CoreCompileInputs.cache
 C:\Users\banel\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.exe
 C:\Users\banel\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.pdb
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\bin\Debug\hero_adventure.exe.config
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\bin\Debug\hero_adventure.exe
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\bin\Debug\hero_adventure.pdb
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.csproj.AssemblyReference.cache
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.Form1.resources
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.Properties.Resources.resources
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.csproj.GenerateResource.cache
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.csproj.CoreCompileInputs.cache
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.exe
+C:\Users\moodk\Source\Repos\hero-adventure-p3\hero_adventure\obj\Debug\hero_adventure.pdb
