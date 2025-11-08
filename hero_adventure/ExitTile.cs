@@ -17,7 +17,7 @@ namespace hero_adventure
             {
                 get
                 {
-                    return '▒'; // symbol for exit tile
+                    return 'E'; // symbol for exit tile
                 }
             }
     }      

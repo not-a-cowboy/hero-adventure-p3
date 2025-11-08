@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static hero_adventure.GameEngine;
 namespace hero_adventure
 {
@@ -121,10 +122,13 @@ namespace hero_adventure
                 return true;
             }
 
+            if (targetTile is WallTile)
+            {
+                return false;
+            }
 
 
-
-            if (targetTile is PickupTile pickUp) //4.3
+                if (targetTile is PickupTile pickUp) //4.3
             {
                 pickUp.ApplyEffect(currentLevel.Hero);
 

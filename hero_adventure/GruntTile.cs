@@ -8,7 +8,7 @@ namespace hero_adventure
 {
     internal class GruntTile : EnemyTIle
     {
-        public GruntTile(Position pos) : base(pos, 10, 1)
+        public GruntTile(Position pos, Level level) : base(pos, 10, 1, level)
         {
         }
 

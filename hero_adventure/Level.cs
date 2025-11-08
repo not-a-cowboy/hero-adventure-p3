@@ -164,6 +164,26 @@ public class Level
         UpdateVision();
     }
 
+    private EnemyTIle CreateEnemyTile (Position pos)
+    {
+        //random number used as a percentage to calculate the chance of an enemy spawning
+        int spawnChance = rand.Next(100);
+
+        // number 0–49 = Grunt(50%), number 50–79 = Warlock(30%), number 80–99 = Tyrant(20%)
+        if (spawnChance < 50)
+        {
+            return new GruntTile(pos, this);
+        }
+        else if (spawnChance < 80)
+        {
+            return new WarlockTile(pos, this);
+        }
+        else
+        {
+            return new TyrantTile(pos, this);
+        }
+    }
+
     private Tile CreateTile(TileType type, Position pos)
     {
         Tile t = null; // temporary tile variable
@@ -183,7 +203,7 @@ public class Level
                 t = new ExitTile(pos); // creates an exit tile
                 break;
             case TileType.Enemy:
-                t = new GruntTile(pos); // creates an enemy tile
+                t = CreateEnemyTile(pos); // creates an enemy tile
                 break;
             case TileType.Pickup: //4.3
                 t = new HealthPickupTile(pos);
