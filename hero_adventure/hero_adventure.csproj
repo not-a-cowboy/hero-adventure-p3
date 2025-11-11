@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackBuffPickupTile.cs" />
     <Compile Include="CharacterTile.cs" />
     <Compile Include="EmptyTile.cs" />
     <Compile Include="EnemyTIle.cs" />

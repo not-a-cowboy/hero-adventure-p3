@@ -13,6 +13,7 @@ namespace hero_adventure
         private int max_hit_pts;
         private int attack_pwr;
         protected Tile[] plyr_vision;
+        private int doubleDamageCount = 0; 
 
 
         public int HitPoints
@@ -68,7 +69,18 @@ namespace hero_adventure
            
           
         }
+        public void Attack(CharacterTile target)
+        {
+            int damage  =  this.attack_pwr;
 
+            if (doubleDamageCount > 0)
+            {
+                damage *= 2;
+                doubleDamageCount--;
+            }
+
+            target.HitPoints -= damage;
+        }
         public void Heal(int amount)
         {
             HitPoints += amount; // increase current hit points
@@ -76,6 +88,11 @@ namespace hero_adventure
             {
                 HitPoints = MaxHitPoints;
             }
+        }
+
+        public void SetDoubleDamage(int count)
+        {
+            doubleDamageCount += count;
         }
     }
 }

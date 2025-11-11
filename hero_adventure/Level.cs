@@ -184,6 +184,20 @@ public class Level
         }
     }
 
+    private PickupTile CreatePickupTile(Position pos)
+    {
+        int roll = rand.Next(0,3);
+
+        if (roll < 2)
+        {
+            return new HealthPickupTile(pos);
+        }
+        else
+        {
+            return new AttackBuffPickupTile(pos);
+        }
+    }
+
     private Tile CreateTile(TileType type, Position pos)
     {
         Tile t = null; // temporary tile variable

@@ -286,8 +286,8 @@ namespace hero_adventure
             if (targetTile is CharacterTile targetCharacter)
             {
                 // Reduce enemies HP accordingly 
-                targetCharacter.HitPoints -= hero.Attackpwr;
-
+                //targetCharacter.HitPoints -= hero.Attackpwr;
+                hero.Attack(targetCharacter);
 
 
 
@@ -339,7 +339,8 @@ namespace hero_adventure
                         continue;
 
                     // Enemy attacks 
-                    target.HitPoints -= enemy.Attackpwr;
+                    //target.HitPoints -= enemy.Attackpwr;
+                    enemy.Attack(target);
 
                     // when enemies die they still are replaced with an x
                     if (target.IsDead)
