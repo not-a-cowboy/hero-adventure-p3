@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public class EmptyTile : Tile
     {
         public EmptyTile(Position position) : base(position) //constructor for the empty tile

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using hero_adventure;
 
-
+[Serializable]
 public class Level
 {
     // 2D array of tiles
@@ -271,16 +271,30 @@ public class Level
 
     public void UpdateExit()
     {
+      
+    {
         bool allEnemiesDead = true;
-        foreach (EnemyTIle en in this.enemy)
+        if (enemy != null)
         {
-            if (en != null && !en.IsDead)
+            foreach (EnemyTIle en in this.enemy)
             {
-                allEnemiesDead = false;
-                break;
+                if (en != null && !en.IsDead)
+                {
+                    allEnemiesDead = false;
+                    break;
+                }
             }
         }
+
+        // If all enemies are dead, unlock the exit.
+        if (exit != null)
+        {
+            if (allEnemiesDead)
+                exit.Unlocked();
+       
+        }
     }
+}
 
     public void UpdateVision()
     {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace hero_adventure
 {
+    [Serializable]
     public class Position
     {
         private int x;

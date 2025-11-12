@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public class HeroTile : CharacterTile
     {
         public HeroTile(Position position) : base(position, 40, 5) // hero with 40 hit points and 5 attack power

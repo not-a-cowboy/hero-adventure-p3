@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public class WallTile : Tile
     {
         public WallTile(Position position) : base(position) // constructor

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     internal class TyrantTile :EnemyTIle
     {
         public TyrantTile(Position pos, Level level) : base(pos, 15, 5, level) 

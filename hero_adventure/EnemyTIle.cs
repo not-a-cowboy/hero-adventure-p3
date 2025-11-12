@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public abstract class EnemyTIle: CharacterTile
     {
         protected Level level;

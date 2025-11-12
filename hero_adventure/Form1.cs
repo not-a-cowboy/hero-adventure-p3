@@ -77,8 +77,8 @@ namespace hero_adventure
 
 
         }
-    
-     private void Form1_KeyDown(object sender, KeyEventArgs e)
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -112,14 +112,14 @@ namespace hero_adventure
                 else if (e.KeyCode == Keys.K)
                     engine.TriggerAttack(GameEngine.Direction.Down);
             }
-        
-    
 
 
 
 
 
-          UpdateDisplay();
+
+
+            UpdateDisplay();
             if (e.KeyCode == Keys.W)
             {
                 lblMovement.Text = $"Hero is moving: Up";
@@ -148,6 +148,40 @@ namespace hero_adventure
         {
 
         }
-    }   
-}
 
+        private void SaveGame_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {//allows players to save game
+                dlg.Filter = "HeroAdventure Save|*.sav";
+                dlg.DefaultExt = "sav";
+                dlg.FileName = "savegame.sav";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    engine.SaveGame(dlg.FileName);
+                    MessageBox.Show("Game saved successfully!");
+                }
+            }
+        }
+
+        private void LoadGame_Click(object sender, EventArgs e)
+        {
+            {
+                using (OpenFileDialog dlg = new OpenFileDialog())
+                {
+                    dlg.Filter = "HeroAdventure Save|*.sav";
+                    if (dlg.ShowDialog() == DialogResult.OK) //allows player to load the game
+                    {
+                        GameEngine loadedGame = GameEngine.LoadGame(dlg.FileName);
+                        if (loadedGame != null)
+                        {
+                            engine = loadedGame;
+                            UpdateDisplay();
+                            MessageBox.Show("Game loaded successfully!");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}       

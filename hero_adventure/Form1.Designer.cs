@@ -30,9 +30,11 @@
         {
             this.lblDisplay = new System.Windows.Forms.Label();
             this.grbLegend = new System.Windows.Forms.GroupBox();
-            this.lblLevelSize = new System.Windows.Forms.Label();
-            this.lblHeroCoords = new System.Windows.Forms.Label();
             this.lblMovement = new System.Windows.Forms.Label();
+            this.lblHeroCoords = new System.Windows.Forms.Label();
+            this.lblLevelSize = new System.Windows.Forms.Label();
+            this.SaveGame = new System.Windows.Forms.Button();
+            this.LoadGame = new System.Windows.Forms.Button();
             this.grbLegend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,16 +61,15 @@
             this.grbLegend.TabStop = false;
             this.grbLegend.Text = "Stats:";
             // 
-            // lblLevelSize
+            // lblMovement
             // 
-            this.lblLevelSize.AutoSize = true;
-            this.lblLevelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelSize.Location = new System.Drawing.Point(7, 30);
-            this.lblLevelSize.Name = "lblLevelSize";
-            this.lblLevelSize.Size = new System.Drawing.Size(53, 20);
-            this.lblLevelSize.TabIndex = 0;
-            this.lblLevelSize.Text = "label1";
-            this.lblLevelSize.Click += new System.EventHandler(this.lblLevelSize_Click);
+            this.lblMovement.AutoSize = true;
+            this.lblMovement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovement.Location = new System.Drawing.Point(11, 99);
+            this.lblMovement.Name = "lblMovement";
+            this.lblMovement.Size = new System.Drawing.Size(53, 20);
+            this.lblMovement.TabIndex = 2;
+            this.lblMovement.Text = "label1";
             // 
             // lblHeroCoords
             // 
@@ -80,21 +81,44 @@
             this.lblHeroCoords.TabIndex = 1;
             this.lblHeroCoords.Text = "label1";
             // 
-            // lblMovement
+            // lblLevelSize
             // 
-            this.lblMovement.AutoSize = true;
-            this.lblMovement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovement.Location = new System.Drawing.Point(11, 99);
-            this.lblMovement.Name = "lblMovement";
-            this.lblMovement.Size = new System.Drawing.Size(53, 20);
-            this.lblMovement.TabIndex = 2;
-            this.lblMovement.Text = "label1";
+            this.lblLevelSize.AutoSize = true;
+            this.lblLevelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelSize.Location = new System.Drawing.Point(7, 30);
+            this.lblLevelSize.Name = "lblLevelSize";
+            this.lblLevelSize.Size = new System.Drawing.Size(53, 20);
+            this.lblLevelSize.TabIndex = 0;
+            this.lblLevelSize.Text = "label1";
+            this.lblLevelSize.Click += new System.EventHandler(this.lblLevelSize_Click);
+            // 
+            // SaveGame
+            // 
+            this.SaveGame.Location = new System.Drawing.Point(0, 325);
+            this.SaveGame.Name = "SaveGame";
+            this.SaveGame.Size = new System.Drawing.Size(106, 34);
+            this.SaveGame.TabIndex = 2;
+            this.SaveGame.Text = "Save game";
+            this.SaveGame.UseVisualStyleBackColor = true;
+            this.SaveGame.Click += new System.EventHandler(this.SaveGame_Click);
+            // 
+            // LoadGame
+            // 
+            this.LoadGame.Location = new System.Drawing.Point(0, 381);
+            this.LoadGame.Name = "LoadGame";
+            this.LoadGame.Size = new System.Drawing.Size(106, 31);
+            this.LoadGame.TabIndex = 3;
+            this.LoadGame.Text = "Load game";
+            this.LoadGame.UseVisualStyleBackColor = true;
+            this.LoadGame.Click += new System.EventHandler(this.LoadGame_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LoadGame);
+            this.Controls.Add(this.SaveGame);
             this.Controls.Add(this.grbLegend);
             this.Controls.Add(this.lblDisplay);
             this.Name = "Form1";
@@ -113,6 +137,8 @@
         private System.Windows.Forms.Label lblMovement;
         private System.Windows.Forms.Label lblHeroCoords;
         private System.Windows.Forms.Label lblLevelSize;
+        private System.Windows.Forms.Button SaveGame;
+        private System.Windows.Forms.Button LoadGame;
     }
 }
 

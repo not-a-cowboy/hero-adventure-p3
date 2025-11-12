@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     internal class WarlockTile : EnemyTIle
     { 
         public WarlockTile(Position pos, Level level) : base(pos, 10, 5, level) 

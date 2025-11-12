@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public abstract class PickupTile : Tile
     {
         protected PickupTile(Position pos) : base(pos) { }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public abstract class CharacterTile : Tile
     {// abstract class for character tiles
         private int hit_points; 

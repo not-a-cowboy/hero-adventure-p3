@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     internal class GruntTile : EnemyTIle
     {
         public GruntTile(Position pos, Level level) : base(pos, 10, 1, level)

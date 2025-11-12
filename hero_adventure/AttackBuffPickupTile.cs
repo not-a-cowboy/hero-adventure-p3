@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     internal class AttackBuffPickupTile : PickupTile
     {
         public AttackBuffPickupTile(Position position) : base(position)

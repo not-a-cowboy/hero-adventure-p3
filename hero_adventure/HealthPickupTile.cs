@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hero_adventure
 {
+    [Serializable]
     public class HealthPickupTile : PickupTile
     {
         public HealthPickupTile(Position pos) : base(pos) { }

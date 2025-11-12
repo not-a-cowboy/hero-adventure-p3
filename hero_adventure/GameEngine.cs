@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -9,8 +11,10 @@ using System.Windows.Forms;
 using static hero_adventure.GameEngine;
 namespace hero_adventure
 {
+    [Serializable]
     public class GameEngine
     {
+        [Serializable]
         public enum Direction // movement directions
         {
             Up,
@@ -18,6 +22,7 @@ namespace hero_adventure
             Left,
             Right
         }
+        [Serializable]
         public enum GameState// current state of the game
         {
             InProgress,
@@ -25,10 +30,11 @@ namespace hero_adventure
             GameOver
         }
 
+
         private Level currentLevel;
         private HeroTile hero;       // stores the hero
         private int numLevels;
-        private Random random;
+        [NonSerialized] private Random random;
         private const int maxSize = 20;
         private const int minSize = 10;
         private int currentLevelNumber = 1;
@@ -96,9 +102,15 @@ namespace hero_adventure
 
             Tile targetTile = currentLevel.Tiles[targetX, targetY];
 
-            if (targetTile is ExitTile)
+            if (targetTile is ExitTile exitTile)
             {
-
+                if (exitTile.IsLocked)
+                {
+                    return false;
+                }
+                else
+                    NextLevel();
+                return true;
                 /* currentLevel.Tiles[currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y] =
                      new EmptyTile(new Position(currentLevel.Hero.Position.X, currentLevel.Hero.Position.Y));*/
 
@@ -108,7 +120,7 @@ namespace hero_adventure
                 currentLevel.Hero.Position.Y = targetY;
                 currentLevel.Tiles[targetX, targetY] = currentLevel.Hero;*/
 
-                
+
                 if (currentLevelNumber == numLevels)
                 {
                     gameState = GameState.Complete;
@@ -128,7 +140,7 @@ namespace hero_adventure
             }
 
 
-                if (targetTile is PickupTile pickUp) //4.3
+            if (targetTile is PickupTile pickUp) //4.3
             {
                 pickUp.ApplyEffect(currentLevel.Hero);
 
@@ -157,10 +169,10 @@ namespace hero_adventure
                 currentLevel.MoveHeroTo(hero, targetTile.Position);
 
                 successfulHeroMoves++;
-                if(successfulHeroMoves % 2 == 0) 
-                { 
-                    MovesEnemies(); 
-                } 
+                if (successfulHeroMoves % 2 == 0)
+                {
+                    MovesEnemies();
+                }
                 currentLevel.Hero.UpdateVision(CurrentLevel);
 
                 return true;
@@ -178,9 +190,9 @@ namespace hero_adventure
         }
 
 
-        
-       
-           public void MovesEnemies()
+
+
+        public void MovesEnemies()
         {
             //  saves the existing enemies before moving them
             var enemiesToMove = currentLevel.Enemy
@@ -189,7 +201,7 @@ namespace hero_adventure
 
             foreach (EnemyTIle enemy in enemiesToMove)
             {
-                
+
                 enemy.UpdateVision(currentLevel);
 
                 // tells the enemy where to move
@@ -258,7 +270,7 @@ namespace hero_adventure
         }
 
 
-        
+
         private bool HeroAttack(Direction direction)
         {
             // Updating the hero’s vision before the attack
@@ -321,6 +333,7 @@ namespace hero_adventure
 
             // Update vision after all attacks
             currentLevel.UpdateVision();
+            currentLevel.UpdateExit();
         }
 
         private void EnemiesAttack()
@@ -358,9 +371,51 @@ namespace hero_adventure
             {
                 return $"Hero HP: {hero.HitPoints}/{hero.MaxHitPoints}";
             }
+
+        }
+
+
+        public void SaveGame(string filePath)
+        {//creates a save file so players can save
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream stream = new FileStream(filePath, FileMode.Create))
+                {
+                    formatter.Serialize(stream, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving game: " + ex.Message);
+            }
+        }
+
+        public static GameEngine LoadGame(string filePath) //creates the space for players to laod their game
+        {
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream stream = new FileStream(filePath, FileMode.Open))
+                {
+                    return (GameEngine)formatter.Deserialize(stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading game: " + ex.Message);
+                return null;
+            }
         }
     }
-}
+} // end of GameEngine
+ // end of namespace
+
+        
+
+    
+
+
 
 
 

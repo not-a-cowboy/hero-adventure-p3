@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace hero_adventure
-{ 
-   public class ExitTile: Tile
+{
+    [Serializable]  
+    public class ExitTile: Tile
     {
 
         private bool isLocked = true;
