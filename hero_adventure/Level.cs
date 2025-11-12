@@ -269,6 +269,19 @@ public class Level
         t2.Position = pos1;
     }
 
+    public void UpdateExit()
+    {
+        bool allEnemiesDead = true;
+        foreach (EnemyTIle en in this.enemy)
+        {
+            if (en != null && !en.IsDead)
+            {
+                allEnemiesDead = false;
+                break;
+            }
+        }
+    }
+
     public void UpdateVision()
     {
         hero.UpdateVision(this);

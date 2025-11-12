@@ -8,7 +8,14 @@ namespace hero_adventure
 { 
    public class ExitTile: Tile
     {
-       
+
+        private bool isLocked = true;
+
+        public bool IsLocked 
+        { 
+            get { return isLocked; } 
+        }
+
             public ExitTile(Position position) : base(position) // constructor for exit tile
             {
             }
@@ -17,9 +24,22 @@ namespace hero_adventure
             {
                 get
                 {
-                    return 'E'; // symbol for exit tile
+                    if (isLocked)
+                    {
+                        return '▓';
+                    }
+                    else
+                    { 
+                        return '▒';
+                    }
+                     
                 }
             }
+
+        public void Unlocked()
+        {
+            isLocked = false;
+        }
     }      
 }
 
