@@ -220,7 +220,7 @@ public class Level
                 t = CreateEnemyTile(pos); // creates an enemy tile
                 break;
             case TileType.Pickup: //4.3
-                t = new HealthPickupTile(pos);
+                t = CreatePickupTile(pos); // creates a pickup tile
                 break;
         }
 
