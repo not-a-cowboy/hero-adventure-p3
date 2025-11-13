@@ -70,6 +70,22 @@ namespace hero_adventure
 
             //to achieve our game displaying position coordinates, we declared properties that expose our GameEngines CurrentLevel field as well as our Positions x and y coordinates
 
+            lblHeroHealth.Text = $"Heroes Health: ";
+            lblHP.Text = $"{engine.CurrentLevel.Hero.HitPoints} HP";
+
+            if (engine.CurrentLevel.Hero.HitPoints >= 30)
+            {
+                lblHP.ForeColor = Color.Green;
+            }
+            else if (engine.CurrentLevel.Hero.HitPoints >= 20)
+            {
+                lblHP.ForeColor = Color.Orange;
+            }
+            else if (engine.CurrentLevel.Hero.HitPoints >= 15)
+            { 
+                lblHP.ForeColor= Color.Red;
+            }
+            else { lblHP.ForeColor = Color.DarkRed; }
         }
 
         private void Form1_Load(object sender, EventArgs e) // form load event

@@ -35,6 +35,8 @@
             this.lblLevelSize = new System.Windows.Forms.Label();
             this.SaveGame = new System.Windows.Forms.Button();
             this.LoadGame = new System.Windows.Forms.Button();
+            this.lblHeroHealth = new System.Windows.Forms.Label();
+            this.lblHP = new System.Windows.Forms.Label();
             this.grbLegend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,13 +52,15 @@
             // 
             // grbLegend
             // 
+            this.grbLegend.Controls.Add(this.lblHP);
+            this.grbLegend.Controls.Add(this.lblHeroHealth);
             this.grbLegend.Controls.Add(this.lblMovement);
             this.grbLegend.Controls.Add(this.lblHeroCoords);
             this.grbLegend.Controls.Add(this.lblLevelSize);
             this.grbLegend.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbLegend.Location = new System.Drawing.Point(538, 59);
             this.grbLegend.Name = "grbLegend";
-            this.grbLegend.Size = new System.Drawing.Size(200, 185);
+            this.grbLegend.Size = new System.Drawing.Size(213, 185);
             this.grbLegend.TabIndex = 1;
             this.grbLegend.TabStop = false;
             this.grbLegend.Text = "Stats:";
@@ -85,7 +89,7 @@
             // 
             this.lblLevelSize.AutoSize = true;
             this.lblLevelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelSize.Location = new System.Drawing.Point(7, 30);
+            this.lblLevelSize.Location = new System.Drawing.Point(11, 26);
             this.lblLevelSize.Name = "lblLevelSize";
             this.lblLevelSize.Size = new System.Drawing.Size(53, 20);
             this.lblLevelSize.TabIndex = 0;
@@ -111,6 +115,26 @@
             this.LoadGame.Text = "Load game";
             this.LoadGame.UseVisualStyleBackColor = true;
             this.LoadGame.Click += new System.EventHandler(this.LoadGame_Click);
+            // 
+            // lblHeroHealth
+            // 
+            this.lblHeroHealth.AutoSize = true;
+            this.lblHeroHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeroHealth.Location = new System.Drawing.Point(11, 134);
+            this.lblHeroHealth.Name = "lblHeroHealth";
+            this.lblHeroHealth.Size = new System.Drawing.Size(53, 20);
+            this.lblHeroHealth.TabIndex = 3;
+            this.lblHeroHealth.Text = "label1";
+            // 
+            // lblHP
+            // 
+            this.lblHP.AutoSize = true;
+            this.lblHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHP.Location = new System.Drawing.Point(141, 134);
+            this.lblHP.Name = "lblHP";
+            this.lblHP.Size = new System.Drawing.Size(53, 20);
+            this.lblHP.TabIndex = 4;
+            this.lblHP.Text = "label1";
             // 
             // Form1
             // 
@@ -139,6 +163,8 @@
         private System.Windows.Forms.Label lblLevelSize;
         private System.Windows.Forms.Button SaveGame;
         private System.Windows.Forms.Button LoadGame;
+        private System.Windows.Forms.Label lblHeroHealth;
+        private System.Windows.Forms.Label lblHP;
     }
 }
 
